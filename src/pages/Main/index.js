@@ -29,7 +29,12 @@ export default class Main extends Component {
 
     const response = await api.get(`/login.php?user=${username}&scode=${securityCode}`);
 
-    console.log(response.data);
+    var parser = new DOMParser(),
+    xmlDoc = parser.parseFromString(response, "text/html")
+
+    const tra = 'maxi-xml';
+
+    console.log("resposta", response.tra);
   };
 
   render() {
