@@ -28,10 +28,9 @@ export default class Main extends Component {
     const { securityCode } = this.state;
     console.log( username, securityCode);
 
-    const response = await api.get('login', {
-      data: {
-         user: username, code: securityCode
-      }
+    const response = await api.post('login', {
+        "user": username,
+        "code": securityCode,
     });
 
     console.log(response);
