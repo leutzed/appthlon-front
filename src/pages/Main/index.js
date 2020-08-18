@@ -26,15 +26,15 @@ export default class Main extends Component {
 
     const { username } = this.state;
     const { securityCode } = this.state;
+    console.log( username, securityCode);
 
-    const response = await api.get(`/login.php?user=${username}&scode=${securityCode}`);
+    const response = await api.get('login', {
+      data: {
+         user: username, code: securityCode
+      }
+    });
 
-    var parser = new DOMParser(),
-    xmlDoc = parser.parseFromString(response, "text/html")
-
-    const tra = 'maxi-xml';
-
-    console.log("resposta", response.tra);
+    console.log(response);
   };
 
   render() {
@@ -44,7 +44,6 @@ export default class Main extends Component {
     return (
       <Container>
         <h1>
-          <FaAffiliatetheme/>
           Login Maxitlhon
         </h1>
 

@@ -23,14 +23,15 @@ export const Container = styled.div`
 export const Form = styled.form`
   margin-top: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   input {
     flex: 1;
-    border: 1px solid #eee;
+    border: 2px solid #eee;
     padding: 10px 15px;
     border-radius: 4px;
     font-size: 16px;
+    margin-bottom: 3px;
   }
 `;
 
@@ -38,10 +39,12 @@ export const SubmitButton = styled.button.attrs({
   type: 'submit',
 })`
   background: #e3ddd3;
-  border: 0;
+  border: 5px;
   padding: 0 15px;
-  margin-left: 10px;
+  margin-top: 10px;
+  height: 30px;
   border-radius: 4px;
+
 
   display: flex;
   justify-content: center;
